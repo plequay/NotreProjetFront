@@ -77,7 +77,8 @@
                         </div>
                     </div>
                     <div class="col-sm-auto">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                        <input class="btn btn-primary" type="submit">
+                        <!-- <button class="btn btn-primary" type="submit">Submit form</button> -->
                         <!-- <a href="index.html">s'incrire</a>
                         <a href="#">mot de passe oublié?</a> -->
                     </div>
