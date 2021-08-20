@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
+    
+    
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -90,7 +94,7 @@
                 <tr>
                   <th> Batiment </th>
                   <th> Attaque</th>
-                  <th> Défense</th>
+                  <th> DÃ©fense</th>
                   <th> Niveau</th>
                 </tr>
                 <tr>
@@ -116,7 +120,7 @@
                 <tr>
                   <th>Total</th>
                   <th>Attaque: 20</th>
-                  <th>Défense: 150</th>
+                  <th>DÃ©fense: 150</th>
               </table>
               <div>
                 <select class="form-select" aria-label="Default select example" style="width:48%;">
@@ -135,7 +139,7 @@
                   <option value="2">Muraille</option>
                   <option value="3">Merveille</option>
                   <option value="4">Scierie</option>
-                  <option value="2">Carrière</option>
+                  <option value="2">CarriÃ¨re</option>
                   <option value="3">Mine</option>
                 </select>
               </div>
@@ -184,7 +188,7 @@
               <tr>
                 <th> Batiment </th>
                 <th> Attaque</th>
-                <th> Défense</th>
+                <th> DÃ©fense</th>
                 <th> Niveau</th>
               </tr>
               <tr>
@@ -210,7 +214,7 @@
               <tr>
                 <th>Total</th>
                 <th>Attaque: 20</th>
-                <th>Défense: 150</th>
+                <th>DÃ©fense: 150</th>
             </table>
             <div>
               <select class="form-select" aria-label="Default select example" style="width:48%;">
@@ -229,7 +233,7 @@
                 <option value="2">Muraille</option>
                 <option value="3">Merveille</option>
                 <option value="4">Scierie</option>
-                <option value="2">Carrière</option>
+                <option value="2">CarriÃ¨re</option>
                 <option value="3">Mine</option>
               </select>
             </div>
@@ -281,7 +285,7 @@
               <tr>
                 <th> Batiment </th>
                 <th> Attaque</th>
-                <th> Défense</th>
+                <th> DÃ©fense</th>
                 <th> Niveau</th>
               </tr>
               <tr>
@@ -307,7 +311,7 @@
               <tr>
                 <th>Total</th>
                 <th>Attaque: 20</th>
-                <th>Défense: 150</th>
+                <th>DÃ©fense: 150</th>
             </table>
             <div>
               <select class="form-select" aria-label="Default select example" style="width:48%;">
@@ -326,7 +330,7 @@
                 <option value="2">Muraille</option>
                 <option value="3">Merveille</option>
                 <option value="4">Scierie</option>
-                <option value="2">Carrière</option>
+                <option value="2">CarriÃ¨re</option>
                 <option value="3">Mine</option>
               </select>
             </div>
@@ -379,7 +383,7 @@
               <tr>
                 <th> Batiment </th>
                 <th> Attaque</th>
-                <th> Défense</th>
+                <th> DÃ©fense</th>
                 <th> Niveau</th>
               </tr>
               <tr>
@@ -405,7 +409,7 @@
               <tr>
                 <th>Total</th>
                 <th>Attaque: 20</th>
-                <th>Défense: 150</th>
+                <th>DÃ©fense: 150</th>
             </table>
             <div>
               <select class="form-select" aria-label="Default select example" style="width:48%;">
@@ -424,7 +428,7 @@
                 <option value="2">Muraille</option>
                 <option value="3">Merveille</option>
                 <option value="4">Scierie</option>
-                <option value="2">Carrière</option>
+                <option value="2">CarriÃ¨re</option>
                 <option value="3">Mine</option>
               </select>
             </div>

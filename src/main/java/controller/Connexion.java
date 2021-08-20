@@ -21,8 +21,15 @@ public class Connexion extends HttpServlet {
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
 		
-		Compte c = Context.getInstance().getDaoC().seConnecter(login, password);
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 		
+		Compte c = Context.getInstance().getDaoC().seConnecter(login, password);
+		System.out.println(login+"        "+password + "doGet");
 	
 		if(c instanceof Joueur) 
 		{
@@ -30,11 +37,11 @@ public class Connexion extends HttpServlet {
 		}
 		else if(c instanceof Admin) 
 		{
-			this.getServletContext().getRequestDispatcher("/admin.html").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/admin.jsp").forward(request, response);
 		}
 		else 
 		{
-			this.getServletContext().getRequestDispatcher("/connect.html").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/pageco.jsp").forward(request, response);
 		}
 		
 	}
@@ -54,11 +61,12 @@ public class Connexion extends HttpServlet {
 		}
 		else if(c instanceof Admin) 
 		{
-			this.getServletContext().getRequestDispatcher("/admin.html").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/admin.jsp").forward(request, response);
 		}
 		else 
 		{
-			this.getServletContext().getRequestDispatcher("/connect.html").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/pageco.jsp").forward(request, response);
 		}
+		System.out.println(login+"        "+password + "doPost");
 	}
 }

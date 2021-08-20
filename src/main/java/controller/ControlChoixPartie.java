@@ -17,17 +17,22 @@ public class ControlChoixPartie extends HttpServlet {
 
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		
 		List<Partie> p = Context.getInstance().getDaoP().findAll();
 
 		request.setAttribute("parties", p);
+		System.out.println(p);
+		this.getServletContext().getRequestDispatcher("/NotreProjetPageJeu.jsp").forward(request, response);
 		
-		this.getServletContext().getRequestDispatcher("/choixPartie.jsp").forward(request, response);
+		
+		
+		System.out.println(p+"doGet");
 		
 	}
 
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		/*
 		if(request.getParameter("type_form").equals("PUT"))
 		{
 			doPut(request);
@@ -46,10 +51,11 @@ public class ControlChoixPartie extends HttpServlet {
 			
 			daoT.insert(t);
 						
-		}
+		}*/
+		System.out.println("doPsot");
 		doGet(request, response);
 	}
-
+/*
 	protected void doPut(HttpServletRequest request) throws ServletException, IOException {
 		System.out.println(request.getParameter("id"));
 		int id=Integer.parseInt(request.getParameter("id"));
@@ -66,5 +72,5 @@ public class ControlChoixPartie extends HttpServlet {
 
 		daoT.delete(Integer.parseInt(request.getParameter("id")));
 	}
-}
+}*/
 }
