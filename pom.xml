@@ -3,11 +3,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>SoprAJC</groupId>
-	<artifactId>NotreProjetBack</artifactId>
+	<artifactId>NotreProjetFront</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	
 	<dependencies>
 	
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -20,6 +26,13 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.5.6.Final</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>SoprAJC</groupId>
+			<artifactId>NotreProjetBack</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
 
 	</dependencies>
 
