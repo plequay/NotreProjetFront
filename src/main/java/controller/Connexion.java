@@ -25,10 +25,10 @@ public class Connexion extends HttpServlet {
 		Compte c = daoC.seConnecter(login, password);
 		
 	
-		if(c instanceof Client) 
+		if(c instanceof Joueur) 
 		{
-			request.setAttribute("villesJSP", villes);
-			this.getServletContext().getRequestDispatcher("/client.jsp").forward(request, response);
+		//	request.setAttribute("villesJSP", villes);
+		//	this.getServletContext().getRequestDispatcher("/client.jsp").forward(request, response);
 		}
 		else if(c instanceof Admin) 
 		{
