@@ -33,7 +33,7 @@ public class Connexion extends HttpServlet {
 	
 		if(c instanceof Joueur) 
 		{
-		this.getServletContext().getRequestDispatcher("/choixPartie.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/choixPartie.html").forward(request, response);
 		}
 		else if(c instanceof Admin) 
 		{
@@ -57,7 +57,7 @@ public class Connexion extends HttpServlet {
 		
 		if(c instanceof Joueur) 
 		{
-			this.getServletContext().getRequestDispatcher("/choixPartie.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/choixPartie.htm").forward(request, response);
 		}
 		else if(c instanceof Admin) 
 		{

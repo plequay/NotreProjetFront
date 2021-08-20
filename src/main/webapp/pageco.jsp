@@ -82,8 +82,7 @@
                     </div>
                     <div class="col-sm-auto">
                         <input class="btn btn-primary" type="submit" value="Se connecter">
-                        <!-- <a href="index.html">s'incrire</a>
-                        <a href="#">mot de passe oublié?</a> -->
+=======
                     </div>
                     <div class="col-sm-auto align-self-end">
                       <a href="index.html" style="font-size:10px">s'incrire</a>

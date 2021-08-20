@@ -110,7 +110,8 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                        <input type="submit" class="btn btn-primary" value="s'inscrire">
+                        <!-- <button class="btn btn-primary" type="submit">Submit form</button> -->
                     </div>
                 </form>
             </div>

@@ -32,26 +32,40 @@ public class ControlIndex extends HttpServlet{
 		
 		Joueur j = new Joueur(login, password, prenom, nom, surnom);
 		Context.getInstance().getDaoC().insert(j);
+		System.out.println(j);
 		
 		this.getServletContext().getRequestDispatcher("/choixPartie.jsp").forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        String nom=request.getParameter("nom");
-        String prenom=request.getParameter("prenom");
-        String surnom=request.getParameter("pseudo");
-        String login=request.getParameter("login");
-        String password=request.getParameter("mdp");
-
-        Joueur j = new Joueur(login, password, prenom, nom, surnom);
-        Context.getInstance().getDaoC().insert(j);
-        System.out.println(j);
-
-        this.getServletContext().getRequestDispatcher("/choixPartie.jsp").forward(request, response);
-        
-        doGet(request,response);
-    }
+		
+		String nom=request.getParameter("nom");
+		String prenom=request.getParameter("prenom");
+		String surnom=request.getParameter("pseudo");
+		String login=request.getParameter("login");
+		String password=request.getParameter("mdp");
+		
+		Joueur j = new Joueur(login, password, prenom, nom, surnom);
+		Context.getInstance().getDaoC().insert(j);
+		System.out.println(j);
+		
+		this.getServletContext().getRequestDispatcher("/choixPartie.jsp").forward(request, response);
+	}
 	
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String nom=request.getParameter("nom");
+		String prenom=request.getParameter("prenom");
+		String surnom=request.getParameter("pseudo");
+		String login=request.getParameter("login");
+		String password=request.getParameter("mdp");
+		
+		Joueur j = new Joueur(login, password, prenom, nom, surnom);
+		Context.getInstance().getDaoC().insert(j);
+		System.out.println(j);
+		
+		this.getServletContext().getRequestDispatcher("/choixPartie.jsp").forward(request, response);
+	}
+
 	
 }
