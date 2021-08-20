@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
+    
+    
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,8 +60,8 @@
     <div class="container h-50">
         <div class="row h-50 justify-content-center align-items-center">
             <div class="col-11 col-md-10 col-lg-10">
-            <h4 style="color:#5f73ad"><i>Veuillez entrer vos informations pour créer un compte</i></h4>
-                <form class="row g-3 needs-validation" novalidate>
+            <h4 style="color:#5f73ad"><i>Veuillez entrer vos informations pour crÃ©er un compte</i></h4>
+                <form action = "index" class="row g-3 needs-validation" novalidate>
                     <div class="col-md-4">
                         <label for="validationServer01" class="form-label">Nom</label>
                         <input type="text" class="form-control" id="validationServer01" name="nom" required>
@@ -117,6 +121,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <script>
+ 
         var form = document.querySelector('.needs-validation');
 
         form.addEventListener('submit', function(event) {
@@ -126,6 +131,7 @@
             }
             form.classList.add('was-validated');
         })
+        
     </script>
 
 </body>

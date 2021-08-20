@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
+    
+    
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,10 +59,10 @@
     <div class="container h-50">
         <div class="row h-50 justify-content-center align-items-center">
             <div class="col-11 col-md-10">
-                <form class="row g-3 needs-validation" novalidate>
+                <form action ="pageco" class="row g-3 needs-validation" novalidate>
                     <div class="col-md-6">
-                        <label for="validationServer01" class="form-label">Login</label>
-                        <input type="text" class="form-control" id="validationServer01" required>
+                        <label for="validationServer01" class="form-label"  >Login</label>
+                        <input type="text" class="form-control" id="validationServer01" name="login" required>
                         <div class="invalid-feedback">
                             Please enter your login
                         </div>
@@ -68,7 +72,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="validationServer02" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="validationServer02" required>
+                        <input type="password" class="form-control" id="validationServer02"  name="password" required>
                          <div class="invalid-feedback">
                             Please enter your password
                         </div>
@@ -77,15 +81,15 @@
                         </div>
                     </div>
                     <div class="col-sm-auto">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                        <input class="btn btn-primary" type="submit" value="Se connecter">
                         <!-- <a href="index.html">s'incrire</a>
-                        <a href="#">mot de passe oublié?</a> -->
+                        <a href="#">mot de passe oubliÃ©?</a> -->
                     </div>
                     <div class="col-sm-auto align-self-end">
                       <a href="index.html" style="font-size:10px">s'incrire</a>
                     </div>
                     <div class="col-sm-auto align-self-end">
-                      <a href="#" style="font-size:10px">mot de passe oublié?</a>
+                      <a href="#" style="font-size:10px">mot de passe oubliÃ©?</a>
                     </div>
                 </form>
             </div>

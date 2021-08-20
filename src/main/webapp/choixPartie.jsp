@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
+    
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,19 +58,19 @@
     <div class="container h-50">
         <div class="row h-50 justify-content-center align-items-center">
             <div class="col-11 col-md-10">
-                <form class="row g-3 needs-validation" novalidate>
+                <form action = "choixPartie" class="row g-3 needs-validation" novalidate>
                     <div class="col-md-6">
                     	<select id = "partiesExistantes" class="form-select" name = "parties">
-                    	<c:for each items ${parties} var = "partie">
+                    	<c:forEach items="${parties}" var = "partie">
                     		<option value="${partie.id}">${partie.id}</option>
                     	</c:forEach>
-                    	<option value="NouvellePartie">Créer une nouvelle partie</option>
+                    	<option value="NouvellePartie">CrÃ©er une nouvelle partie</option>
                     	</select>
                     </div>
                     <div class="col-sm-auto">
                         <button class="btn btn-primary" type="submit">Lancer la partie</button>
                         <!-- <a href="index.html">s'incrire</a>
-                        <a href="#">mot de passe oublié?</a> -->
+                        <a href="#">mot de passe oubliÃ©?</a> -->
                     </div>
                     <div class="col-sm-auto align-self-end">
                       <a href="pageco.html" style="font-size:10px">retour</a>
