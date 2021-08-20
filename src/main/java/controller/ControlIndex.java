@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,10 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mysql.cj.xdevapi.Client;
-
-import model.Admin;
-import model.Compte;
+import model.Joueur;
 import util.Context;
 
 @WebServlet("/connexion")
@@ -26,7 +22,10 @@ public class ControlIndex extends HttpServlet{
 		String login=request.getParameter("login");
 		String password=request.getParameter("mdp");
 		
-		Context.getInstance().getDaoC().seConnecter(login, password);
+		Joueur j = new Joueur(login, password, prenom, nom, surnom);
+		Context.getInstance().getDaoC().insert(j);
+		
+		this.getServletContext().getRequestDispatcher("/choixPartie.jsp").forward(request, response);
 		
 //		DAOCompte daoC = new DAOCompte();
 //		DAOVilleJDBC daoV = new DAOVilleJDBC();

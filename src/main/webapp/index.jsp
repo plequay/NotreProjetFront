@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,59 +51,49 @@
     </nav>
 
     <hr>
+	
 
     <div class="container h-50">
         <div class="row h-50 justify-content-center align-items-center">
             <div class="col-11 col-md-10 col-lg-10">
+            <h4 style="color:#5f73ad"><i>Veuillez entrer vos informations pour créer un compte</i></h4>
                 <form class="row g-3 needs-validation" novalidate>
                     <div class="col-md-4">
                         <label for="validationServer01" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="validationServer01" required>
+                        <input type="text" class="form-control" id="validationServer01" name="nom" required>
                         <div class="invalid-feedback">
                             Entrer votre nom.
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label for="validationServer02" class="form-label">Prenom</label>
-                        <input type="text" class="form-control" id="validationServer02" required>
+                        <input type="text" class="form-control" id="validationServer02" name="prenom" required>
                          <div class="invalid-feedback">
                             Entrer votre prenom.
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <label for="validationServerUsername" class="form-label">Username</label>
-                    <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                        <input type="text" class="form-control" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
-                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                            Please choose a username.
+                        <label for="validationServer02" class="form-label">Pseudo</label>
+                        <input type="text" class="form-control" id="validationServer02" name="pseudo" required>
+                         <div class="invalid-feedback">
+                            Entrer votre pseudo.
                         </div>
                     </div>
-                    </div>
-                    <div class="col-md-6">
-                    <label for="validationServer03" class="form-label">City</label>
-                    <input type="text" class="form-control" id="validationServer03" aria-describedby="validationServer03Feedback" required>
-                    <div id="validationServer03Feedback" class="invalid-feedback">
-                        Please provide a valid city.
-                    </div>
-                    </div>
-                    <div class="col-md-3">
-                    <label for="validationServer04" class="form-label">State</label>
-                    <select class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option>...</option>
-                    </select>
-                    <div id="validationServer04Feedback" class="invalid-feedback">
-                        Please select a valid state.
-                    </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationServer05" class="form-label">Zip</label>
-                        <input type="text" class="form-control" id="validationServer05" aria-describedby="validationServer05Feedback" required>
-                        <div id="validationServer05Feedback" class="invalid-feedback">
-                            Please provide a valid zip.
+                    <div class="col-md-4">
+                        <label for="validationServer02" class="form-label">Login</label>
+                        <input type="text" class="form-control" id="validationServer02"  name="login" required>
+                         <div class="invalid-feedback">
+                            Entrer votre Login.
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <label for="validationServer02" class="form-label">Mot de passe</label>
+                        <input type="text" class="form-control" id="validationServer02" name="mdp" required>
+                         <div class="invalid-feedback">
+                            Entrer votre Mot de passe.
+                        </div>
+                    </div>
+                    
                     <div class="col-12">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
