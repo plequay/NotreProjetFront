@@ -9,25 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.jdbc.DAOCompteJDBC;
-import dao.jdbc.DAOVilleJDBC;
-import metier.Admin;
-import metier.Client;
-import metier.Compte;
-import metier.Ville;
+import dao.DAOCompte;
+import model.*;
 
 @WebServlet("/pageco")
 public class Connexion extends HttpServlet {
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DAOCompteJDBC daoC = new DAOCompteJDBC();
-		DAOVilleJDBC daoV = new DAOVilleJDBC();
+		
+		DAOCompte daoC = new DAOCompte();
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
+		
 		Compte c = daoC.seConnecter(login, password);
 		
-		List<Ville> villes = daoV.findAll();
 	
 		if(c instanceof Client) 
 		{
