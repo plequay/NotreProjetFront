@@ -12,7 +12,7 @@ import notreProjetBack.config.AppConfig;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("NotreProjetFront.controller")
+@ComponentScan("notreProjetFront.controller")
 @Import(AppConfig.class)
 public class WebConfig {
 
