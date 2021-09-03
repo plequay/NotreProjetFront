@@ -78,9 +78,9 @@
 	<main>
 
 		<div class="container">
-			<div class="row row-cols-2" style="-bs-gutter-y: 20px;">
+			<div class="row" style="-bs-gutter-y: 20px;">
 
-				<div class="col"
+				<div class="col-6"
 					style="padding-top: calc(var(- -bs-gutter-x)* .5); padding-bottom: calc(var(- -bs-gutter-x)* .5);">
 					Pseudo du joueur1
 					<%-- 					${session.compte.surname} --%>
@@ -188,7 +188,7 @@
 
 
 
-					<div>
+					<div id="fenetreAttaque">
 						<h3>Attaque</h3>
 						<select class="form-select" aria-label="Default select example"
 							style="width: 48%;">
@@ -215,12 +215,47 @@
 					</div>
 
 
+					<script type="text/javascript">
+						fenetreAttaque.style.display = "none";
+						fenetreTransformation.style.display = "none";
+						fenetreConstruction.style.display = "none";
+						fenetreAmelioration.style.display = "none";
+
+						function clickAttaque() {
+							fenetreAttaque.style.display = "block";
+							fenetreTransformation.style.display = "none";
+							fenetreConstruction.style.display = "none";
+							fenetreAmelioration.style.display = "none";
+
+						}
+						function clickAmelioration() {
+							fenetreAttaque.style.display = "none";
+							fenetreTransformation.style.display = "none";
+							fenetreConstruction.style.display = "none";
+							fenetreAmelioration.style.display = "block";
+
+						}
+						function clickTransformation() {
+							fenetreAttaque.style.display = "none";
+							fenetreTransformation.style.display = "block";
+							fenetreConstruction.style.display = "none";
+							fenetreAmelioration.style.display = "none";
+
+						}
+						function clickConstruction() {
+							fenetreAttaque.style.display = "none";
+							fenetreTransformation.style.display = "none";
+							fenetreConstruction.style.display = "block";
+							fenetreAmelioration.style.display = "none";
+
+						}
+					</script>
 
 				</div>
 
 
-				<div class="row">
-					<div>
+				<div class="col-6">
+					<div class="row">
 						Pseudo du joueur2
 						<%-- 					${session.compte.surname} --%>
 						<table class="table table-striped">
@@ -276,7 +311,7 @@
 
 
 
-					<div class="nonePlayer">
+					<div class="row">
 						Pseudo du joueur3
 						<%-- 					${session.compte.surname} --%>
 						<table class="table table-striped">
@@ -329,6 +364,7 @@
 						</table>
 					</div>
 				</div>
+
 			</div>
 		</div>
 
@@ -336,45 +372,6 @@
 
 	</main>
 	<footer> </footer>
-
-
-
-</body>
-<script type="text/javascript">
-	fenetreAttaque.style.display = "none";
-	fenetreTransformation.style.display = "none";
-	fenetreConstruction.style.display = "none";
-	fenetreAmelioration.style.display = "none";
-
-	function clickAttaque() {
-		fenetreAttaque.style.display = "block";
-		fenetreTransformation.style.display = "none";
-		fenetreConstruction.style.display = "none";
-		fenetreAmelioration.style.display = "none";
-
-	}
-	function clickAmelioration() {
-		fenetreAttaque.style.display = "none";
-		fenetreTransformation.style.display = "none";
-		fenetreConstruction.style.display = "none";
-		fenetreAmelioration.style.display = "block";
-
-	}
-	function clickTransformation() {
-		fenetreAttaque.style.display = "none";
-		fenetreTransformation.style.display = "block";
-		fenetreConstruction.style.display = "none";
-		fenetreAmelioration.style.display = "none";
-
-	}
-	function clickConstruction() {
-		fenetreAttaque.style.display = "none";
-		fenetreTransformation.style.display = "none";
-		fenetreConstruction.style.display = "block";
-		fenetreAmelioration.style.display = "none";
-
-	}
-</script>
 
 
 
