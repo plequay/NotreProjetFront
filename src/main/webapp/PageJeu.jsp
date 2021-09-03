@@ -13,11 +13,6 @@
 	crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>PageJeu</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-	crossorigin="anonymous">
 
 <style>
 .box {
@@ -33,6 +28,9 @@
 	display: inline-block;
 }
 </style>
+
+
+
 </head>
 <body>
 
@@ -213,13 +211,15 @@
 							<%-- 								itemLabel="${batiment.nom}"></form:options> --%>
 							<!--                   			Ajouter le cout des amélioration -->
 						</select>
-						<button type="submit" class="btn btn-outline-success">Attaquer
-							!</button>
+						<button type="submit" class="btn btn-outline-success">Attaquer!</button>
 					</div>
+
+
+
 				</div>
-				
-				
-				<div class="row row-cols-2">
+
+
+				<div class="row">
 					<div>
 						Pseudo du joueur2
 						<%-- 					${session.compte.surname} --%>
@@ -329,20 +329,17 @@
 						</table>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 
 
 
-
 	</main>
 	<footer> </footer>
+
+
+
 </body>
-
-
-
-
 <script type="text/javascript">
 	fenetreAttaque.style.display = "none";
 	fenetreTransformation.style.display = "none";
@@ -378,6 +375,9 @@
 
 	}
 </script>
+
+
+
 
 
 </html>
