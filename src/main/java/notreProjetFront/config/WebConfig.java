@@ -1,4 +1,4 @@
-package NotreProjetFront.config;
+package notreProjetFront.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

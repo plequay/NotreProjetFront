@@ -1,4 +1,4 @@
-package NotreProjetFront.controller;
+package notreProjetFront.controller;
 
 public class ControlPageJeu {
 
