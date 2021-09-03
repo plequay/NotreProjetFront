@@ -6,6 +6,7 @@
 <c:set var="ctx" value="${pageContext.servletContext.contextPath}" />
 <html>
 <head>
+<base href="${ctx}/">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -37,7 +38,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"> <img src="logo.png" alt=""
+				<a class="navbar-brand" href="#"> <img src="images/logo.png" alt=""
 					width="30" height="24">
 				</a>
 				<button class="navbar-toggler" type="button"
@@ -80,30 +81,49 @@
 		<div class="container">
 			<div class="row row-cols-2" style="-bs-gutter-y: 20px;">
 				<div class="row"
-					style="padding-top: calc(var(- -bs-gutter-x)* .5); padding-bottom: calc(var(- -bs-gutter-x)* .5);height:50%;padding-right:5%;" >
+					style="padding-top: calc(var(- -bs-gutter-x)* .5); padding-bottom: calc(var(- -bs-gutter-x)* .5); height: 50%; padding-right: 5%;">
 					<h2>${player.id.compte.surnom}</h2>
 					<%-- 					${session.compte.surname} --%>
 					<table class="table table-striped">
-						<tr>
-							<th><img height="40px" width="40px"
-								src="https://www.bois-brazeco.com/content/uploads/2019/08/buches-de-bois-sec-40cm-3-380x380.jpg"
-								alt=" bois"> :0</th>
-							<th><img height="40px" width="40px"
-								src="http://produitsversailles.com/wp-content/uploads/2018/06/pierre-polie-semi-grise-_105643-red-copy-300x300.png"
-								alt="pierre">:0</th>
-							<th><img height="40px" width="40px"
-								src="http://www.a3m-asso.fr/wp-content/uploads/2016/07/ERAMET-Minerai-300x200.jpg"
-								alt="minerais">:0</th>
-							<th><img height="40px" width="40px"
-								src="https://blog.arpp.org/wp-content/uploads/sites/5/2019/09/or-.jpg"
-								alt="or">:0</th>
-							<th><img height="40px" width="40px"
-								src="https://www.corse-epoxy.fr/wp-content/uploads/2016/09/profil-acier-720x340.jpg"
-								alt="fer">:0</th>
-							<th><img height="40px" width="40px"
-								src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/NatCopper.jpg/220px-NatCopper.jpg"
-								alt="cuivre">:0</th>
-						</tr>
+						<c:forEach items="${player.sessionRessource}" var="sr">
+							<tr>
+								<th><img height="40px" width="40px" src="images/bois.jpg"
+									alt=" bois"> <c:choose>
+										<c:when test="${sr.id.ressource.nom == 'bois'}">:${sr.quantite}</c:when>
+										<c:otherwise>:0</c:otherwise>
+									</c:choose></th>
+								<th><img height="40px" width="40px"
+									src="http://produitsversailles.com/wp-content/uploads/2018/06/pierre-polie-semi-grise-_105643-red-copy-300x300.png"
+									alt="pierre"> <c:choose>
+										<c:when test="${sr.id.ressource.nom == 'pierre'}">:${sr.quantite}</c:when>
+										<c:otherwise>:0</c:otherwise>
+									</c:choose></th>
+								<th><img height="40px" width="40px"
+									src="http://www.a3m-asso.fr/wp-content/uploads/2016/07/ERAMET-Minerai-300x200.jpg"
+									alt="minerais"> <c:choose>
+										<c:when test="${sr.id.ressource.nom == 'minerais'}">:${sr.quantite}</c:when>
+										<c:otherwise>:0</c:otherwise>
+									</c:choose></th>
+								<th><img height="40px" width="40px"
+									src="https://blog.arpp.org/wp-content/uploads/sites/5/2019/09/or-.jpg"
+									alt="or"> <c:choose>
+										<c:when test="${sr.id.ressource.nom == 'gold'}">:${sr.quantite}</c:when>
+										<c:otherwise>:0</c:otherwise>
+									</c:choose></th>
+								<th><img height="40px" width="40px"
+									src="https://www.corse-epoxy.fr/wp-content/uploads/2016/09/profil-acier-720x340.jpg"
+									alt="fer"> <c:choose>
+										<c:when test="${sr.id.ressource.nom == 'fer'}">:${sr.quantite}</c:when>
+										<c:otherwise>:0</c:otherwise>
+									</c:choose></th>
+								<th><img height="40px" width="40px"
+									src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/NatCopper.jpg/220px-NatCopper.jpg"
+									alt="cuivre"> <c:choose>
+										<c:when test="${sr.id.ressource.nom == 'cuivre'}">:${sr.quantite}</c:when>
+										<c:otherwise>:0</c:otherwise>
+									</c:choose></th>
+							</tr>
+						</c:forEach>
 					</table>
 					<table class="table table-striped">
 						<tr>
@@ -131,7 +151,7 @@
 							<th>Attaque: ${totalAtt}</th>
 							<th>Défense: ${totalDef}</th>
 					</table>
-					
+
 					<div>
 						<button type="button" class="btn btn-primary"
 							onclick="clickConstruction()">Construire</button>
@@ -141,7 +161,9 @@
 							onclick="clickTransformation()">Transformer</button>
 						<button type="submit" class="btn btn-danger"
 							onclick="clickAttaque()">Attaquer</button>
-						<button type="button" class="btn btn-dark"><a href = "${ctx}/PageJeu/tour"></a>Fin du tour</button>
+						<button type="button" class="btn btn-dark">
+							<a href="pagejeu/tour"></a>Fin du tour
+						</button>
 					</div>
 
 
@@ -213,62 +235,116 @@
 						<button type="submit" class="btn btn-outline-success">Attaquer!</button>
 					</div>
 				</div>
-						
+
 				<div class="row row-cols-1">
 					<c:forEach items="${watchers}" var="p">
 						<div class="row">
-						<h2>${p.id.compte.surnom}</h2>
-						<%-- 					${session.compte.surname} --%>
-						<table class="table table-striped">
-							<tr>
-								<th><img height="40px" width="40px"
-									src="/webapp/images/bois.jpg"
-									alt=" bois"> :0</th>
-								<th><img height="40px" width="40px"
-									src="http://produitsversailles.com/wp-content/uploads/2018/06/pierre-polie-semi-grise-_105643-red-copy-300x300.png"
-									alt="pierre">:0</th>
-								<th><img height="40px" width="40px"
-									src="http://www.a3m-asso.fr/wp-content/uploads/2016/07/ERAMET-Minerai-300x200.jpg"
-									alt="minerais">:0</th>
-								<th><img height="40px" width="40px"
-									src="https://blog.arpp.org/wp-content/uploads/sites/5/2019/09/or-.jpg"
-									alt="or">:0</th>
-								<th><img height="40px" width="40px"
-									src="https://www.corse-epoxy.fr/wp-content/uploads/2016/09/profil-acier-720x340.jpg"
-									alt="fer">:0</th>
-								<th><img height="40px" width="40px"
-									src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/NatCopper.jpg/220px-NatCopper.jpg"
-									alt="cuivre">:0</th>
-							</tr>
-						</table>
-						<table class="table table-striped">
-							<tr>
-								<th>Batiment</th>
-								<th>Attaque</th>
-								<th>Défense</th>
-								<th>Niveau</th>
-							</tr>
-							<c:set var="totalAtt" value="0"></c:set>
-							<c:set var="totalDef" value="0"></c:set>
-							<c:forEach items="${p.sessionBatiment}" var="sb">
+							<h2>${p.id.compte.surnom}</h2>
+							<%-- 					${session.compte.surname} --%>
+							<table class="table table-striped">
+								<c:forEach items="${p.sessionRessource}" var="sr">
+									<tr>
+										<c:choose>
+											<c:when test="${sr.id.ressource.nom == 'bois'}">
+												<th><img height="40px" width="40px"
+													src="images/bois.jpg" alt=" bois"> :${sr.quantite}</th>
+											</c:when>
+											<c:otherwise>
+												<th><img height="40px" width="40px"
+													src="images/bois.jpg" alt=" bois"> :0</th>
+											</c:otherwise>
+										</c:choose>
+										<c:choose>
+											<c:when test="${sr.id.ressource.nom == 'pierre'}">
+												<th><img height="40px" width="40px"
+													src="http://produitsversailles.com/wp-content/uploads/2018/06/pierre-polie-semi-grise-_105643-red-copy-300x300.png" alt=" pierre"> :${sr.quantite}</th>
+											</c:when>
+											<c:otherwise>
+												<th><img height="40px" width="40px"
+													src="http://produitsversailles.com/wp-content/uploads/2018/06/pierre-polie-semi-grise-_105643-red-copy-300x300.png" alt=" pierre"> :0</th>
+											</c:otherwise>
+										</c:choose>
+										<c:choose>
+											<c:when test="${sr.id.ressource.nom == 'minerais'}">
+												<th><img height="40px" width="40px"
+													src="images/minerai.jpeg" alt=" minerais"> :${sr.quantite}</th>
+											</c:when>
+											<c:otherwise>
+												<th><img height="40px" width="40px"
+													src="images/minerai.jpeg" alt=" minerais"> :0</th>
+											</c:otherwise>
+										</c:choose>
+										<c:choose>
+											<c:when test="${sr.id.ressource.nom == 'charbon'}">
+												<th><img height="40px" width="40px"
+													src="images/charbon.jpg" alt=" charbon"> :${sr.quantite}</th>
+											</c:when>
+											<c:otherwise>
+												<th><img height="40px" width="40px"
+													src="images/charbon.jpg" alt=" charbon"> :0</th>
+											</c:otherwise>
+										</c:choose>
+										<c:choose>
+											<c:when test="${sr.id.ressource.nom == 'gold'}">
+												<th><img height="40px" width="40px"
+													src="https://blog.arpp.org/wp-content/uploads/sites/5/2019/09/or-.jpg" alt=" gold"> :${sr.quantite}</th>
+											</c:when>
+											<c:otherwise>
+												<th><img height="40px" width="40px"
+													src="https://blog.arpp.org/wp-content/uploads/sites/5/2019/09/or-.jpg" alt=" gold"> :0</th>
+											</c:otherwise>
+										</c:choose>
+										<c:choose>
+											<c:when test="${sr.id.ressource.nom == 'fer'}">
+												<th><img height="40px" width="40px"
+													src="https://www.corse-epoxy.fr/wp-content/uploads/2016/09/profil-acier-720x340.jpg" alt=" fer"> :${sr.quantite}</th>
+											</c:when>
+											<c:otherwise>
+												<th><img height="40px" width="40px"
+													src="https://www.corse-epoxy.fr/wp-content/uploads/2016/09/profil-acier-720x340.jpg" alt=" fer"> :0</th>
+											</c:otherwise>
+										</c:choose>
+										<c:choose>
+											<c:when test="${sr.id.ressource.nom == 'cuivre'}">
+												<th><img height="40px" width="40px"
+													src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/NatCopper.jpg/220px-NatCopper.jpg" alt=" cuivre"> :${sr.quantite}</th>
+											</c:when>
+											<c:otherwise>
+												<th><img height="40px" width="40px"
+													src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/NatCopper.jpg/220px-NatCopper.jpg" alt=" cuivre"> :0</th>
+											</c:otherwise>
+										</c:choose>
+									</tr>
+								</c:forEach>
+							</table>
+							<table class="table table-striped">
 								<tr>
-									<td>${sb.batiment.nom}</td>
-									<td>${sb.batiment.att}</td>
-									<td>${sb.batiment.def}</td>
-									<td>${sb.batiment.level}</td>
+									<th>Batiment</th>
+									<th>Attaque</th>
+									<th>Défense</th>
+									<th>Niveau</th>
 								</tr>
-								<c:set var="totalAtt" value="${totalAtt + batiment.att }"></c:set>
-								<c:set var="totalDef" value="${totalDef + batiment.def }"></c:set>
-							</c:forEach>
-						</table>
-						<table class="table table-striped">
-							<tr>
-								<th>Total</th>
-								<th>Attaque: ${totalAtt}</th>
-								<th>Défense: ${totalDef}</th>
-						</table>
-					</div>
-				</c:forEach>
+								<c:set var="totalAtt" value="0"></c:set>
+								<c:set var="totalDef" value="0"></c:set>
+								<c:forEach items="${p.sessionBatiment}" var="sb">
+									<tr>
+										<td>${sb.batiment.nom}</td>
+										<td>${sb.batiment.att}</td>
+										<td>${sb.batiment.def}</td>
+										<td>${sb.batiment.level}</td>
+									</tr>
+									<c:set var="totalAtt" value="${totalAtt + batiment.att }"></c:set>
+									<c:set var="totalDef" value="${totalDef + batiment.def }"></c:set>
+								</c:forEach>
+							</table>
+							<table class="table table-striped">
+								<tr>
+									<th>Total</th>
+									<th>Attaque: ${totalAtt}</th>
+									<th>Défense: ${totalDef}</th>
+							</table>
+						</div>
+					</c:forEach>
 				</div>
 
 			</div>
@@ -279,43 +355,38 @@
 	</main>
 	<footer> </footer>
 
-<script type="text/javascript">
-						fenetreAttaque.style.display = "none";
-						fenetreTransformation.style.display = "none";
-						fenetreConstruction.style.display = "none";
-						fenetreAmelioration.style.display = "none";
+	<script type="text/javascript">
+		fenetreAttaque.style.display = "none";
+		fenetreTransformation.style.display = "none";
+		fenetreConstruction.style.display = "none";
+		fenetreAmelioration.style.display = "none";
 
-						function clickAttaque() {
-							fenetreAttaque.style.display = "block";
-							fenetreTransformation.style.display = "none";
-							fenetreConstruction.style.display = "none";
-							fenetreAmelioration.style.display = "none";
+		function clickAttaque() {
+			fenetreAttaque.style.display = "block";
+			fenetreTransformation.style.display = "none";
+			fenetreConstruction.style.display = "none";
+			fenetreAmelioration.style.display = "none";
 
-						}
-						function clickAmelioration() {
-							fenetreAttaque.style.display = "none";
-							fenetreTransformation.style.display = "none";
-							fenetreConstruction.style.display = "none";
-							fenetreAmelioration.style.display = "block";
+		}
+		function clickAmelioration() {
+			fenetreAttaque.style.display = "none";
+			fenetreTransformation.style.display = "none";
+			fenetreConstruction.style.display = "none";
+			fenetreAmelioration.style.display = "block";
 
-						}
-						function clickTransformation() {
-							fenetreAttaque.style.display = "none";
-							fenetreTransformation.style.display = "block";
-							fenetreConstruction.style.display = "none";
-							fenetreAmelioration.style.display = "none";
+		}
+		function clickTransformation() {
+			fenetreAttaque.style.display = "none";
+			fenetreTransformation.style.display = "block";
+			fenetreConstruction.style.display = "none";
+			fenetreAmelioration.style.display = "none";
 
-						}
-						function clickConstruction() {
-							fenetreAttaque.style.display = "none";
-							fenetreTransformation.style.display = "none";
-							fenetreConstruction.style.display = "block";
-							fenetreAmelioration.style.display = "none";
+		}
+		function clickConstruction() {
+			fenetreAttaque.style.display = "none";
+			fenetreTransformation.style.display = "none";
+			fenetreConstruction.style.display = "block";
+			fenetreAmelioration.style.display = "none";
 
-						}
-					</script>
-
-
-
-
-</html>
+		}
+	</script></html>

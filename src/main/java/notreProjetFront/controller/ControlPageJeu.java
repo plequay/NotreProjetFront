@@ -31,6 +31,7 @@ public class ControlPageJeu {
 		if(session.getAttribute("players")==null) {
 			session.setAttribute("players",sr.findByPartieWithRessourcesAndBatiments(partie));
 		}
+		
 		List<Session> players = (List<Session>) session.getAttribute("players");
 		List<Session> watchers = new ArrayList();
 		for(Session player : players) {
